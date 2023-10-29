@@ -15,12 +15,10 @@ let getAsync (client: HttpClient) (url: string) =
         resp.EnsureSuccessStatusCode() |> ignore
         let! ret = resp.Content.ReadAsStringAsync() |> Async.AwaitTask
         let len = ret.Length
-        printfn "%d" len
-        (*
+        printf "%d" len
         match len with
-            | len when len < 50 -> printfn "%s" ret
-            | _ -> ignore len
-        *)
+            | len when len < 50 -> printfn " content: %s" ret
+            | _ -> printfn ""
     }
 
 // urlList |> List.map fetch
