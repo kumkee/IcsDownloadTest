@@ -20,6 +20,8 @@ let getAsync (client: HttpClient) (url: string) =
 
 let client = new HttpClient()
 
+client.DefaultRequestHeaders.Add("User-Agent", "F# App")
+
 urlList
 |> List.map (getAsync client)
 |> Async.Parallel
