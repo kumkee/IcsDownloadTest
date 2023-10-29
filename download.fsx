@@ -14,9 +14,20 @@ let getAsync (client: HttpClient) (url: string) =
         let! resp = client.GetAsync url |> Async.AwaitTask
         resp.EnsureSuccessStatusCode() |> ignore
         let! ret = resp.Content.ReadAsStringAsync() |> Async.AwaitTask
-        printfn "%s" ret
+        let len = ret.Length
+        printfn "%d" len
+        (*
+        match len with
+            | len when len < 50 -> printfn "%s" ret
+            | _ -> ignore len
+        *)
     }
 
 // urlList |> List.map fetch
 let client = new HttpClient()
-getAsync client urlList[4] |> Async.RunSynchronously
+// getAsync client urlList[4] |> Async.RunSynchronously
+
+urlList
+|> List.map (getAsync client)
+|> Async.Parallel
+|> Async.RunSynchronously
