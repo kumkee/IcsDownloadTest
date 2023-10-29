@@ -9,4 +9,4 @@ dotnet fsi downlad.fsx
 ```
 
 It fails to download the last `ics` in the list returning an error message 
-"ERR: Missing UA30".
+`ERR: Missing UA30`.
