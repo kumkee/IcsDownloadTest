@@ -9,6 +9,15 @@ To run the script, run
 dotnet fsi downlad.fsx
 ```
 
+Output:
+
+```
+17 content: ERR: Missing UA30
+750
+3697
+2890
+```
+
 It fails to download the last `ics` in the list returning an error message
 `ERR: Missing UA30`. Using Linux command `curl` will download the whole file
 correctly with the error.
