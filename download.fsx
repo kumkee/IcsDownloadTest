@@ -1,5 +1,4 @@
 open System.Net.Http
-open System.IO
 
 let urlList =
     [ "https://gist.githubusercontent.com/DeMarko/6142417/raw/1cd301a5917141524b712f92c2e955e86a1add19/sample.ics"
