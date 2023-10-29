@@ -1,5 +1,4 @@
 open System.Net.Http
-open System.IO
 
 let url = "https://portal.macleans.school.nz/index.php/ics/school.ics"
 (* other working urls:
